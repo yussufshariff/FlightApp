@@ -1,9 +1,8 @@
-import React from 'react';
-
+import Navbar from "../src/Components/Navbar";
 function App() {
   return (
-    <div className="App">
-      <h1>TakeFlight</h1>
+    <div>
+      <Navbar />
     </div>
   );
 }
