@@ -1,14 +1,13 @@
 import "../Styles/FlightScanner.css";
-import { useEffect, useState } from "react";
-
-export default function FlightScanner() {
+import { useState } from "react";
+export default function FlightScanner({}) {
   const [departure, setDeparture] = useState("");
   const [arrival, setArrival] = useState("");
 
   const handleSearch = (e: any) => {
     e.preventDefault();
-    console.log("From:", departure);
-    console.log("To:", arrival);
+    setArrival(arrival);
+    setDeparture(departure);
   };
 
   return (
