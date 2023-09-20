@@ -1,10 +1,11 @@
 import Navbar from "../src/Components/Navbar";
-import FlightScanner from "Components/FlightScanner";
+import FlightSearch from "Components/FlightSearch";
+
 function App() {
   return (
     <div>
       <Navbar />
-      <FlightScanner />
+      <FlightSearch />
     </div>
   );
 }
