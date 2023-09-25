@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { getFlight } from "Utils/api"; // Import the getFlight function
+import { getFlight } from "Utils/api";
+import { useLocation } from "react-router-dom";
 
 interface FlightData {
   flightId: string;
@@ -13,26 +14,30 @@ interface FlightData {
   price: number;
 }
 
-interface FlightsProps {
-  departure: string;
-  arrival: string;
-  loading: boolean;
-}
-
-export default function Flights({ departure, arrival }: FlightsProps) {
+export default function Flights() {
   const [flights, setFlights] = useState<FlightData[] | null>(null);
+  const location = useLocation();
 
   useEffect(() => {
+    const pathWithQuery = location.pathname + location.search;
+    const queryParams = new URLSearchParams(location.search);
+    const departure = queryParams.get("departure");
+    const arrival = queryParams.get("arrival");
+
+    console.log("Path with Query:", pathWithQuery);
+    console.log("Departure:", departure);
+    console.log("Arrival:", arrival);
+
     if (departure && arrival) {
       getFlight(departure, arrival)
         .then((flightData: FlightData[] | null) => {
-          setFlights(flightData); // Update state with an array of FlightData objects
+          setFlights(flightData);
         })
         .catch((error) => {
           console.error("Error fetching flight data:", error);
         });
     }
-  }, [departure, arrival]);
+  }, [location]);
 
   return (
     <section>

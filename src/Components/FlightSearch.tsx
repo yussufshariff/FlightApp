@@ -2,6 +2,10 @@ import "../Styles/FlightSearch.css";
 import Flights from "Components/Flights";
 import { getFlight } from "Utils/api";
 
+import { Link } from "react-router-dom";
+import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import { useState } from "react";
 
 interface FlightData {
@@ -16,7 +20,9 @@ interface FlightData {
   price: number;
 }
 
-export default function FlightScanner() {
+export default function FlightSearch() {
+  const navigate = useNavigate();
+
   const [departure, setDeparture] = useState("");
   const [arrival, setArrival] = useState("");
   const [loading, setLoading] = useState(false);
@@ -25,10 +31,10 @@ export default function FlightScanner() {
   const handleSearch = async (e: any) => {
     e.preventDefault();
     setLoading(true);
-
     try {
       const flightData = await getFlight(departure, arrival);
       setFlightData(flightData);
+      navigate(`/Flights?departure=${departure}&arrival=${arrival}`);
     } catch (error) {
       console.error("Error fetching flight data:", error);
     } finally {
@@ -40,7 +46,7 @@ export default function FlightScanner() {
     <div className="scan">
       <h1 className="scan-title">Search for a flight here</h1>
       <div className="scan-input">
-        <form onSubmit={handleSearch} className="scan-input">
+        <form className="scan-input" onSubmit={handleSearch}>
           <label htmlFor="Departure"></label>
           <input
             type="text"
@@ -62,7 +68,6 @@ export default function FlightScanner() {
           </button>
         </form>
       </div>
-      <Flights departure={departure} arrival={arrival} loading={loading} />
     </div>
   );
 }
