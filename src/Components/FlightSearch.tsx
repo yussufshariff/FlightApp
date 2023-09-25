@@ -1,12 +1,8 @@
 import "../Styles/FlightSearch.css";
-import Flights from "Components/Flights";
 import { getFlight } from "Utils/api";
-
-import { Link } from "react-router-dom";
-import { redirect } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
 import { useState } from "react";
+import { ScaleLoader } from "react-spinners";
 
 interface FlightData {
   flightId: string;
@@ -32,6 +28,7 @@ export default function FlightSearch() {
     e.preventDefault();
     setLoading(true);
     try {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       const flightData = await getFlight(departure, arrival);
       setFlightData(flightData);
       navigate(`/Flights?departure=${departure}&arrival=${arrival}`);
@@ -41,6 +38,14 @@ export default function FlightSearch() {
       setLoading(false);
     }
   };
+
+  if (loading) {
+    return (
+      <div>
+        <ScaleLoader height={35} color={"#000000"} loading={loading} />
+      </div>
+    );
+  }
 
   return (
     <div className="scan">

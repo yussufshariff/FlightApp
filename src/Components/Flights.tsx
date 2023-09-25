@@ -19,14 +19,9 @@ export default function Flights() {
   const location = useLocation();
 
   useEffect(() => {
-    const pathWithQuery = location.pathname + location.search;
     const queryParams = new URLSearchParams(location.search);
     const departure = queryParams.get("departure");
     const arrival = queryParams.get("arrival");
-
-    console.log("Path with Query:", pathWithQuery);
-    console.log("Departure:", departure);
-    console.log("Arrival:", arrival);
 
     if (departure && arrival) {
       getFlight(departure, arrival)
