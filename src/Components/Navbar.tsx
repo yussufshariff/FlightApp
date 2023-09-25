@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="navbar-links">
         <ul>
           <li>
-            <a href="/Home">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
             <a href="/Profile">My Profile</a>
