@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<FlightSearch />} />
-        <Route path="/Flights/*" element={<Flights />} />
+        <Route path="/Flights" element={<Flights />} />
       </Routes>
     </div>
   );

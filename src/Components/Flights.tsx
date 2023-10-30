@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getFlight } from "Utils/api";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import "../Styles/Flights.css";
 
 interface FlightData {
   flightId: string;
@@ -35,14 +36,20 @@ export default function Flights() {
   }, [location]);
 
   return (
-    <section>
+    <section className="flight-container">
       {flights && (
         <div>
-          <h1>Flight Details</h1>
           {flights.map((flight) => (
-            <div key={flight.flightId}>
+            <div key={flight.flightId} className="flight-box">
               <h3>{flight.airline}</h3>
+              <p>
+                {flight.origin} - {flight.destination}
+              </p>
               <p>Departure Date: {flight.departureDate}</p>
+              <p>Arrival Date: {flight.arrivalDate}</p>
+              <Link to="/flightid">
+                <button>View Flight</button>
+              </Link>
             </div>
           ))}
         </div>

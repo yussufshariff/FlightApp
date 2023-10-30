@@ -1,0 +1,14 @@
+.flight-container {
+  display: grid;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 3%;
+}
+
+.flight-box {
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #093c72;
+  margin-bottom: 15px;
+}

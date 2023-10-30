@@ -41,7 +41,7 @@ export default function FlightSearch() {
 
   if (loading) {
     return (
-      <div>
+      <div className="loading">
         <ScaleLoader height={35} color={"#000000"} loading={loading} />
       </div>
     );
