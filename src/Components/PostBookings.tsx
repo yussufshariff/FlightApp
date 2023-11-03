@@ -1,10 +1,8 @@
 import { postBooking } from "Utils/api";
 
-export default function PostBookings() {
+export default function PostBookings({ flightId }: any) {
   const handleSubmit = (e: any) => {
-    console.log("Hello World");
-
-    postBooking(17, "BA101", 9);
+    postBooking(17, flightId, 9);
   };
 
   return (

@@ -48,7 +48,6 @@ export const getUser = (userId: number) => {
   return axios
     .get(`https://localhost:7039/api/User/${userId}`)
     .then((response) => {
-      console.log(response.data);
       return response.data;
     });
 };
@@ -68,7 +67,6 @@ export const postBooking = (
       postBody
     )
     .then((response) => {
-      console.log(response);
       return response.data;
     });
 };

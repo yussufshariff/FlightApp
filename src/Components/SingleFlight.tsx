@@ -52,7 +52,7 @@ export default function SingleFlight() {
           </div>
         )}
 
-        <PostBookings />
+        <PostBookings flightId={flight?.flightId} />
       </div>
     </section>
   );
