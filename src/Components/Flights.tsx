@@ -47,7 +47,7 @@ export default function Flights() {
               </p>
               <p>Departure Date: {flight.departureDate}</p>
               <p>Arrival Date: {flight.arrivalDate}</p>
-              <Link to="/flightid">
+              <Link to={flight.flightId}>
                 <button>View Flight</button>
               </Link>
             </div>
