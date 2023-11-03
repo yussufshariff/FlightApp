@@ -36,22 +36,10 @@ export const getFlight = (
     });
 };
 
-export const SingleFlight = (flightId: string) => {
+export const getSingleFlight = (flightId: string) => {
   return axios
     .get(`https://localhost:7039/api/Flight/${flightId}`)
     .then((response: any) => {
-      return response.data.map((element: FlightData) => {
-        return {
-          flightId: element.flightId,
-          origin: element.origin,
-          destination: element.destination,
-          departureDate: element.departureDate,
-          arrivalDate: element.arrivalDate,
-          airline: element.airline,
-          aircraft: element.aircraft,
-          availableSeats: element.availableSeats,
-          price: element.price,
-        };
-      });
+      return response.data;
     });
 };
