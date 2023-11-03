@@ -43,3 +43,12 @@ export const getSingleFlight = (flightId: string) => {
       return response.data;
     });
 };
+
+export const getUser = (userId: number) => {
+  return axios
+    .get(`https://localhost:7039/api/User/${userId}`)
+    .then((response) => {
+      console.log(response.data);
+      return response.data;
+    });
+};
