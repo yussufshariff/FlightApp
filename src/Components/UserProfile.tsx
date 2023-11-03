@@ -23,8 +23,6 @@ export default function UserProfile() {
       });
   }, []);
 
-  console.log(getUser(1));
-
   return (
     <section>
       <h1>User Profile</h1>
