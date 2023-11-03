@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import { getSingleFlight } from "Utils/api";
 import { ScaleLoader } from "react-spinners";
 
+import PostBookings from "Components/PostBookings";
+
 interface FlightData {
   flightId: string;
   origin: string;
@@ -49,6 +51,8 @@ export default function SingleFlight() {
             <p>Price: {flight.price}</p>
           </div>
         )}
+
+        <PostBookings />
       </div>
     </section>
   );

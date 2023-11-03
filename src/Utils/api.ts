@@ -52,3 +52,23 @@ export const getUser = (userId: number) => {
       return response.data;
     });
 };
+
+export const postBooking = (
+  userId: number,
+  FlightId: string,
+  numPassengers: number
+) => {
+  const postBody = {
+    numPassengers: numPassengers,
+  };
+
+  return axios
+    .post(
+      `https://localhost:7039/api/Bookings?UserId=${userId}&FlightId=${FlightId}`,
+      postBody
+    )
+    .then((response) => {
+      console.log(response);
+      return response.data;
+    });
+};
