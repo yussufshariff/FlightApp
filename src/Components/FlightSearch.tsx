@@ -28,7 +28,7 @@ export default function FlightSearch() {
     e.preventDefault();
     setLoading(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 500));
       const flightData = await getFlight(departure, arrival);
       setFlightData(flightData);
       navigate(`/Flights?departure=${departure}&arrival=${arrival}`);

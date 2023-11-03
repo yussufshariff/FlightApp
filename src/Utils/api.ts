@@ -31,10 +31,15 @@ export const getFlight = (
           departureDate: element.departureDate,
           arrivalDate: element.arrivalDate,
           airline: element.airline,
-          aircraft: element.aircraft,
-          availableSeats: element.availableSeats,
-          price: element.price,
         };
       });
+    });
+};
+
+export const getSingleFlight = (flightId: string) => {
+  return axios
+    .get(`https://localhost:7039/api/Flight/${flightId}`)
+    .then((response: any) => {
+      return response.data;
     });
 };
