@@ -39,7 +39,11 @@ export default function UserBookings() {
   return (
     <section>
       <h1>Your Bookings</h1>
-      <div></div>
+      <div>
+        {booking?.map((b) => (
+          <p>{b.flight.aircraft}</p>
+        ))}
+      </div>
     </section>
   );
 }
