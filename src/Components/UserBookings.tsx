@@ -41,7 +41,19 @@ export default function UserBookings() {
       <h1>Your Bookings</h1>
       <div>
         {booking?.map((b) => (
-          <p>{b.flight.aircraft}</p>
+          <section>
+            <p>Flight Number: {b.flight.flightId}</p>
+            <p>Booking Date: {b.bookingDate}</p>
+            <p>Number of Passengers: {b.numPassengers}</p>
+            <p>Total Price: {b.totalPrice}</p>
+            <section>
+              <p>Airline: {b.flight.airline}</p>
+              <p>Aircraft: {b.flight.aircraft}</p>
+              <p>Origin: {b.flight.origin}</p>
+              <p>Destination: {b.flight.destination}</p>
+              <p>Available Seats: {b.flight.availableSeats}</p>
+            </section>
+          </section>
         ))}
       </div>
     </section>
