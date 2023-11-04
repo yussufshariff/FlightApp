@@ -71,7 +71,7 @@ export const postBooking = (
     });
 };
 
-const getBookings = (userId: number) => {
+export const getBookings = (userId: number) => {
   return axios
     .get(`https://localhost:7039/api/Bookings?UserId=${userId}`)
     .then((response) => {
