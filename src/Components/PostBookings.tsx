@@ -2,7 +2,7 @@ import { postBooking } from "Utils/api";
 
 export default function PostBookings({ flightId }: any) {
   const handleSubmit = (e: any) => {
-    postBooking(17, flightId, 9);
+    postBooking(1, flightId, 9);
   };
 
   return (

@@ -70,3 +70,11 @@ export const postBooking = (
       return response.data;
     });
 };
+
+export const getBookings = (userId: number) => {
+  return axios
+    .get(`https://localhost:7039/api/Bookings?UserId=${userId}`)
+    .then((response) => {
+      return response.data;
+    });
+};
