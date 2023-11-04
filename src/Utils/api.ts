@@ -48,7 +48,25 @@ export const getUser = (userId: number) => {
   return axios
     .get(`https://localhost:7039/api/User/${userId}`)
     .then((response) => {
-      console.log(response.data);
+      return response.data;
+    });
+};
+
+export const postBooking = (
+  userId: number,
+  FlightId: string,
+  numPassengers: number
+) => {
+  const postBody = {
+    numPassengers: numPassengers,
+  };
+
+  return axios
+    .post(
+      `https://localhost:7039/api/Bookings?UserId=${userId}&FlightId=${FlightId}`,
+      postBody
+    )
+    .then((response) => {
       return response.data;
     });
 };
