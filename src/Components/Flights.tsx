@@ -3,6 +3,8 @@ import { getFlight } from "Utils/api";
 import { Link, useLocation } from "react-router-dom";
 import "../Styles/Flights.css";
 
+import "../Styles/Navbar.css";
+
 interface FlightData {
   flightId: string;
   origin: string;
@@ -17,7 +19,12 @@ interface FlightData {
 
 export default function Flights() {
   const [flights, setFlights] = useState<FlightData[] | null>(null);
+
+  const [isSmallerNavbar, setIsSmallerNavbar] = useState(false);
+
   const location = useLocation();
+
+  const smallerNavbarRoutes = ["/Flights"];
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -33,7 +40,13 @@ export default function Flights() {
           console.error("Error fetching flight data:", error);
         });
     }
-  }, [location]);
+
+    if (smallerNavbarRoutes.includes(location.pathname)) {
+      setIsSmallerNavbar(true);
+    } else {
+      setIsSmallerNavbar(false);
+    }
+  }, [location, location.pathname]);
 
   return (
     <section className="flight-container">

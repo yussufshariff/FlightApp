@@ -1,3 +1,8 @@
+.scan {
+  margin-top: -350px;
+  position: relative;
+}
+
 .loading {
   display: flex;
   justify-content: center;
@@ -11,9 +16,8 @@
 }
 
 .scan-input {
-  display: grid;
+  display: flex;
   justify-content: center;
-  grid-gap: 6px;
   padding: 1rem;
 }
 
@@ -33,7 +37,7 @@
 }
 
 .scan-button {
-  margin: auto;
+  margin: 1rem;
   display: block;
   background-color: #4caf50;
   color: white;
@@ -46,4 +50,18 @@
 
 .scan-button:hover {
   background-color: #3e8e41;
+}
+
+@media (max-width: 800px) {
+  .scan {
+    display: grid;
+    justify-content: center;
+    /* margin-top: 0px; */
+    background-color: #082f59;
+  }
+  .scan-input {
+    display: grid;
+    justify-content: center;
+    grid-gap: 10px;
+  }
 }

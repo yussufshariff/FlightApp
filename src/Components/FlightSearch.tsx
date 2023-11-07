@@ -52,22 +52,36 @@ export default function FlightSearch() {
       <h1 className="scan-title">Search for a flight here</h1>
       <div className="scan-input">
         <form className="scan-input" onSubmit={handleSearch}>
-          <label htmlFor="Departure"></label>
+          <label htmlFor="Departure">From</label>
           <input
             type="text"
             name="departure"
-            placeholder="From"
+            placeholder="Departure"
             value={departure}
             onChange={(e) => setDeparture(e.target.value)}
-          ></input>
-          <label htmlFor="Arrival"></label>
+          />
+          <label htmlFor="Arrival">To</label>
           <input
             type="text"
             name="arrival"
-            placeholder="To"
+            placeholder="Destination"
             value={arrival}
             onChange={(e) => setArrival(e.target.value)}
-          ></input>
+          />
+          <label htmlFor="Departure">Departure Date</label>
+          <input
+            type="date"
+            id="departureDate"
+            name="departure"
+            placeholder="Departure Date"
+          />
+          <label htmlFor="Arrival"> Arrival Date </label>
+          <input
+            type="date"
+            name="arrival"
+            id="arrivalDate"
+            placeholder="Arrival Date"
+          />
           <button className="scan-button" type="submit">
             Search
           </button>
