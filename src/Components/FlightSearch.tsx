@@ -3,6 +3,7 @@ import { getFlight } from "Utils/api";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { ScaleLoader } from "react-spinners";
+import Featured from "./Featured";
 
 interface FlightData {
   flightId: string;
@@ -87,6 +88,7 @@ export default function FlightSearch() {
           </button>
         </form>
       </div>
+      <Featured />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Flights from "Components/Flights";
 import SingleFlight from "Components/SingleFlight";
 import UserBookings from "Components/UserBookings";
 import UserProfile from "Components/UserProfile";
+import Featured from "Components/Featured";
 
 import { Route, Routes } from "react-router-dom";
 
