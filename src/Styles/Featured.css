@@ -1,0 +1,12 @@
+.featured-grid {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding-top: 1rem;
+  background-color: white;
+}
+
+.featured-img {
+  height: 400px;
+  width: 400px;
+}

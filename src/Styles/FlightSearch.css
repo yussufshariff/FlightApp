@@ -1,6 +1,7 @@
-.scan {
-  margin-top: -350px;
+.scan-grid {
+  background-color: #082f59;
   position: relative;
+  padding-top: 12px;
 }
 
 .loading {
@@ -10,15 +11,15 @@
 
 .scan-title {
   text-align: center;
+  text-decoration: underline;
   color: #ffffff;
   font-family: sans-serif;
-  padding-top: 3%;
 }
 
 .scan-input {
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  padding: 3rem;
 }
 
 .scan-input input {

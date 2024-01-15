@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getFlight } from "Utils/api";
 import { Link, useLocation } from "react-router-dom";
 import "../Styles/Flights.css";
+import Navbar from "./Navbar";
 
 import "../Styles/Navbar.css";
 
@@ -49,24 +50,26 @@ export default function Flights() {
   }, [location, location.pathname]);
 
   return (
-    <section className="flight-container">
-      {flights && (
-        <div>
-          {flights.map((flight) => (
-            <div key={flight.flightId} className="flight-box">
-              <h3>{flight.airline}</h3>
-              <p>
-                {flight.origin} - {flight.destination}
-              </p>
-              <p>Departure Date: {flight.departureDate}</p>
-              <p>Arrival Date: {flight.arrivalDate}</p>
-              <Link to={flight.flightId}>
-                <button>View Flight</button>
-              </Link>
-            </div>
-          ))}
-        </div>
-      )}
+    <section>
+      <section className="flight-container">
+        {flights && (
+          <div>
+            {flights.map((flight) => (
+              <div key={flight.flightId} className="flight-box">
+                <h3>{flight.airline}</h3>
+                <p>
+                  {flight.origin} - {flight.destination}
+                </p>
+                <p>Departure Date: {flight.departureDate}</p>
+                <p>Arrival Date: {flight.arrivalDate}</p>
+                <Link to={flight.flightId}>
+                  <button>View Flight</button>
+                </Link>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
     </section>
   );
 }

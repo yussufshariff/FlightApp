@@ -4,14 +4,13 @@ import Flights from "Components/Flights";
 import SingleFlight from "Components/SingleFlight";
 import UserBookings from "Components/UserBookings";
 import UserProfile from "Components/UserProfile";
-import Featured from "Components/Featured";
 
 import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <Navbar isSmaller="smallerNavbar" />
       <Routes>
         <Route path="/" element={<FlightSearch />} />
         <Route path="/Flights" element={<Flights />} />

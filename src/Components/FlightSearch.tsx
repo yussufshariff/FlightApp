@@ -49,7 +49,7 @@ export default function FlightSearch() {
   }
 
   return (
-    <div className="scan">
+    <div className="scan-grid">
       <h1 className="scan-title">Search for a flight</h1>
       <div className="scan-input">
         <form className="scan-input" onSubmit={handleSearch}>

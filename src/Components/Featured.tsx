@@ -1,3 +1,4 @@
+import "../Styles/Featured.css";
 const dubai = require("Photos/dubai.jpg");
 const newyork = require("Photos/newyork.jpg");
 const tokyo = require("Photos/tokyo.jpg");
@@ -22,13 +23,11 @@ const FeaturedFlights = [
 
 export default function Featured() {
   return (
-    <section>
-      <h2>Featured Destinations</h2>
-
+    <section className="featured-grid">
       {FeaturedFlights.map((city) => (
         <section>
           <p>{city.name}</p>
-          <img src={city.img}></img>
+          <img src={city.img} className="featured-img"></img>
         </section>
       ))}
     </section>
