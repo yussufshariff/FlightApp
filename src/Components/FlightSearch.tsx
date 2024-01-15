@@ -2,7 +2,7 @@ import "../Styles/FlightSearch.css";
 import { getFlight } from "Utils/api";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { ScaleLoader } from "react-spinners";
+import { ScaleLoader, SyncLoader } from "react-spinners";
 import Featured from "./Featured";
 
 interface FlightData {
@@ -29,7 +29,7 @@ export default function FlightSearch() {
     e.preventDefault();
     setLoading(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       const flightData = await getFlight(departure, arrival);
       setFlightData(flightData);
       navigate(`/Flights?departure=${departure}&arrival=${arrival}`);
@@ -43,7 +43,7 @@ export default function FlightSearch() {
   if (loading) {
     return (
       <div className="loading">
-        <ScaleLoader height={35} color={"#000000"} loading={loading} />
+        <SyncLoader size={25} color={"#082f59"} loading={loading} />
       </div>
     );
   }
