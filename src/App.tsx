@@ -10,7 +10,7 @@ import { Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div>
-      <Navbar />
+      <Navbar isSmaller="smallerNavbar" />
       <Routes>
         <Route path="/" element={<FlightSearch />} />
         <Route path="/Flights" element={<Flights />} />

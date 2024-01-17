@@ -1,0 +1,19 @@
+.featured-grid {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  background-color: white;
+}
+
+.featured-img {
+  height: 400px;
+  width: 400px;
+  border-radius: 5%;
+}
+
+.featured-name {
+  font-size: 40px;
+  position: relative;
+  top: 15rem;
+  color: aliceblue;
+}

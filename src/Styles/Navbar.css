@@ -15,7 +15,7 @@ body {
   align-items: center;
   color: white;
   padding-top: 2rem;
-  height: 405px;
+  height: 80px;
   align-items: baseline;
 }
 
@@ -39,6 +39,7 @@ body {
 
 .navbar-links {
   height: 100%;
+  justify-content: center;
 }
 
 .navbar-links ul {
