@@ -26,7 +26,7 @@ export default function Featured() {
     <section className="featured-grid">
       {FeaturedFlights.map((city) => (
         <section>
-          <p>{city.name}</p>
+          <p className="featured-name">{city.name}</p>
           <img src={city.img} className="featured-img"></img>
         </section>
       ))}
