@@ -60,8 +60,14 @@ export default function Flights() {
                 <p>
                   {flight.origin} - {flight.destination}
                 </p>
-                <p>Departure Date: {flight.departureDate}</p>
-                <p>Arrival Date: {flight.arrivalDate}</p>
+                <p>
+                  Departure Date:{" "}
+                  {flight.departureDate.replace(/-/g, "/").slice(0, 10)}
+                </p>
+                <p>
+                  Arrival Date:{" "}
+                  {flight.arrivalDate.replace(/-/g, "/").slice(0, 10)}
+                </p>
                 <Link to={flight.flightId}>
                   <button>View Flight</button>
                 </Link>
