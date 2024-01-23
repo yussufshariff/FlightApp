@@ -22,7 +22,7 @@ Welcome to the Holiday Booking Frontend, a React and TypeScript application desi
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/holiday-booking-frontend.git
+    git clone https://github.com/yussufshariff/holiday-booking-frontend.git
     ```
 
 2. Navigate to the project directory:
